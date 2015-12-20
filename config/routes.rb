@@ -13,6 +13,17 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  #Storage
+  get '/storages/new', to: 'storages#new'
+  post '/storages', to: 'storages#create'
+  get '/storages/:id', to: 'storages#show'
+  get '/storages/:id/edit', to: 'storages#edit'
+
+  patch '/storages/:id', to: 'storages#update'
+  put '/storages/:id', to: 'storages#update'
+
+  delete '/storages/:id', to: 'storages#destroy', as: 'delete_post'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

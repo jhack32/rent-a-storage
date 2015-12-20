@@ -1,0 +1,6 @@
+<h1>Posting: <%= @storage.title %> </h1>
+<h2>Location: <%= @storage.location %></h2>
+<h3>Price: $<%= @storage.price %> an hour</h3>
+<h4>by: <%= link_to @storage.user.username, '/users/' + @storage.user.id.to_s %> </h4>
+<h4> Description:</h4>
+<p> <%= @storage.description %></p>

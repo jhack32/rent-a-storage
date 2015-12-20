@@ -1,1 +1,15 @@
+<%= link_to 'Create Post', '/storages/new' %>
 
+<h2> Current Storage postings: </h2>
+
+
+<% @postings.each do |posting| %>
+<%= link_to posting.title, '/storages/' + posting.id.to_s %><br>
+Location: <%= posting.location %><br>
+Price: $<%= posting.price %><br>
+  <% if current_user === posting.user %>
+    <%= link_to 'Delete', '/storages/' + posting.id.to_s, method: :delete %>
+    <%= link_to 'Edit', '/storages/' + posting.id.to_s + '/edit' %>
+    <br>
+  <% end %>
+<% end %>
