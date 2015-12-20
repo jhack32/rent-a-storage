@@ -1,0 +1,18 @@
+<h2> Edit </h2>
+<%= form_for :new_post, url: '/storages/' + @new_post.id.to_s, :html => {:method => :put} do |t| %> 
+
+  <%= t.label :title %>
+  <%= t.text_field :title %>
+  <br>
+  <%= t.label :price %>
+  $<%= t.number_field :price %> an hour<br>
+
+  <%= t.label :location %>
+  <%= t.text_field :location %>
+  <br>
+  <%= t.label :description %>
+  <br>
+  <%= t.text_area :description, size: '24x6' %>
+
+  <%= t.submit "Save new changes" %>
+<% end %>
