@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get '/users/new', to: 'users#new'
   post '/users', to: 'users#create'
 
+  #user profile
+  get '/users/:id', to: 'users#show'
+
   #User login/logout
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -23,6 +26,7 @@ Rails.application.routes.draw do
   put '/storages/:id', to: 'storages#update'
 
   delete '/storages/:id', to: 'storages#destroy', as: 'delete_post'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
