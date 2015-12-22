@@ -1,0 +1,15 @@
+<h1>user: <%= @user.username %></h1>
+
+
+<h2>Previous postings: </h2>
+
+<% if @user.storages.length === 0 %>
+  None 
+<% end %>
+
+<ul> <% @user.storages.each do |storage| %>
+  <li><%= link_to storage.title, url: '/storages/' + storage.id.to_s %></li>
+</ul>
+<% end %>
+
+<%= render '/users/form' %>
