@@ -12,7 +12,7 @@
 </ul>
 <% end %>
 
-<%= render '/reviews/form' %>
+<%= render '/reviews/form' unless current_user.id == @user.id %>
 
 <h4>Reviews</h4>
 
