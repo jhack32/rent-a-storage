@@ -8,8 +8,18 @@
 <% end %>
 
 <ul> <% @user.storages.each do |storage| %>
-  <li><%= link_to storage.title, url: '/storages/' + storage.id.to_s %></li>
+  <li><%= link_to storage.title, storage_path(storage.id) %></li>
 </ul>
 <% end %>
 
-<%= render '/users/form' %>
+<%= render '/reviews/form' %>
+
+<h4>Reviews</h4>
+
+<% @reviews.each do |review| %>
+<div>
+Rating: <%= review.rating %>
+Message: <%= review.message %>
+by: <%= review.user.username %>
+</div>
+<% end %>
