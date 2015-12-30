@@ -1,0 +1,10 @@
+<%= form_for Review.new, url: '/users/' + @user.id.to_s + '/reviews' do |t| %>
+  <%= t.label :rating %>
+  <%= t.select :rating, [1,2,3,4,5] %>
+
+  <%= t.label :message %>
+  <%= t.text_area :message %>
+
+  <%= t.submit 'Submit' %>
+
+<% end %>
