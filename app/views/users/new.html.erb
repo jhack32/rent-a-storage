@@ -7,18 +7,19 @@
     <% end %>
 </ul>
 <% end %>
+<div class="form-group">
+  <%= form_for @new_user, url: '/users' do |f| %>
 
-<%= form_for @new_user, url: '/users' do |f| %>
+   <%= f.label :username %>
+   <%= f.text_field :username, class: 'form-control'%>
 
- <%= f.label :username %>
- <%= f.text_field :username %>
+   <%= f.label :password %>
+   <%= f.password_field :password, class: 'form-control' %>
 
- <%= f.label :password %>
- <%= f.password_field :password %>
+  <%= f.label :email %>
+  <%= f.text_field :email, class: 'form-control' %>
 
-<%= f.label :email %>
-<%= f.text_field :email %>
+  <%= f.submit %>
 
-<%= f.submit %>
-
-<% end %>
+  <% end %>
+</div>

@@ -7,17 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<h1><%= link_to 'Rent A Storage!', '/' %></h1>
-
-<% if current_user %>
-  Signed in as <%= link_to current_user.username, '/users/' + current_user.id.to_s %> | <%= link_to "Logout", '/logout' %>
-  <%= link_to 'Create Post', '/storages/new' %>
-<% else %>
-  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/users/new' %>
-<% end %>
-
+<div class="container">
+  <div class="header clearfix">
+    <nav>
+      <ul class="nav nav-pills pull-right">
+      <% if current_user %>
+        <li>Signed in as <%= link_to current_user.username, '/users/' + current_user.id.to_s %></li>
+        <li> <%= link_to "Logout", '/logout' %></li>
+        <li><%= link_to 'Create Post', '/storages/new' %></li>
+      <% else %>
+        <li><%= link_to 'Login', '/login' %></li> 
+        <li><%= link_to 'Signup', '/users/new' %></li>
+      <% end %>
+      </ul>
+    </nav>
+    <h1 class="text-muted"><%= link_to 'Rent A Storage!', '/' %></h1>
+  </div>
+  <div class="jumbotron">
 <%= yield %>
-
+  </div>
+</div>
 </body>
 </html>
