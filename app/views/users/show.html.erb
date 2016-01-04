@@ -9,16 +9,18 @@
 
 <ul> <% @user.storages.each do |storage| %>
   <li><%= link_to storage.title, storage_path(storage.id) %></li>
-</ul>
 <% end %>
-
-<%= render '/reviews/form' unless current_user.id == @user.id %>
-
-<h4>Reviews</h4>
+</ul>
+  <% if logged_in? %>
+    <%= render '/reviews/form' unless current_user.id == @user.id %>
+  <% end %>
+  
+<h2>Reviews</h2>
 
 <% @reviews.each do |review| %>
 <div>
 Rating: <%= review.rating %>
+</div>
 Message: <%= review.message %>
 by: <%= review.user.username %>
 </div>

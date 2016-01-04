@@ -2,7 +2,7 @@
 
 
 <% @postings.each do |posting| %>
-<%= link_to posting.title, '/storages/' + posting.id.to_s %><br>
+<%= link_to posting.title, '/storages/' + posting.id.to_s, class: 'lead' %><br>
 Location: <%= posting.location %><br>
 Price: $<%= posting.price %><br>
   <% if current_user === posting.user %>
